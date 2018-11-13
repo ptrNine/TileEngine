@@ -1,0 +1,7 @@
+[anim_player_run]
+run_down 	= 0, 0, 40, 50, 6, 100
+run_up 		= 0, 50, 40, 50, 6, 100
+run_right 	= 0, 100, 40, 50, 6, 120
+run_left 	= 0, 150, 40, 50, 6, 120
+
+[run_down_cp0]

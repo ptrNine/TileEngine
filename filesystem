@@ -1,0 +1,7 @@
+game_data 		= gamedata/
+app_data		= app_data/
+logs			= $app_data + logs/
+config			= $game_data + configs/
+maps			= $game_data + maps/
+textures		= $game_data + textures/
+fonts           = $game_data + textures/ + fonts/

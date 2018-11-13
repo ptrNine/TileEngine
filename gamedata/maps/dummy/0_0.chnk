@@ -1,0 +1,52 @@
+
+const float calcShootDirTimeStep = 100.0f;
+const float METERS_TO_FEET = 3.28084f;
+const float m_fGravityConst = 9.81f;
+
+float calculateShootDir(/*const Fvector& P, Fvector& D, const Fvector enemyPos,*/ double BC, float startSpeed, const int DragFunc) {
+	//Fvector flyingVec = enemyPos;
+	//flyingVec.sub(P);
+	std::cout << "BC = " << BC << " G" << DragFunc << "  start speed = " << startSpeed << std::endl;
+	float distToEnemy = 1000.0f;//flyingVec.magnitude();
+
+	if (distToEnemy < 10.0f)
+		return 0.0f;
+
+	float curFlyDist = 0.0f;
+	float time = 0.0f;
+	float drop = 0.0f;
+	float curSpeed = startSpeed;
+	float ySpeed = 0.0f;
+	float delta_time_sec = calcShootDirTimeStep / 1000;
+	int iterations = 0;
+	while (true) {
+		curFlyDist += curSpeed * delta_time_sec;
+		if (curFlyDist > distToEnemy)
+			break;
+		iterations++;
+		time += calcShootDirTimeStep;
+		curSpeed -= (retard(DragFunc, BC, METERS_TO_FEET * curSpeed) / METERS_TO_FEET) * delta_time_sec;
+		ySpeed += m_fGravityConst *  delta_time_sec;
+		//ySpeed -= (retard(DragFunc, BC, METERS_TO_FEET * ySpeed)/METERS_TO_FEET) * delta_time_sec;
+		drop += ySpeed * delta_time_sec;
+	}
+	float difference_k = (curFlyDist - distToEnemy) / curSpeed * delta_time_sec;
+	float newTimeStep = difference_k * delta_time_sec;
+	drop += ySpeed * newTimeStep;
+	time += newTimeStep;
+	//flyingVec.y += drop;
+	//flyingVec.normalize();
+	//D.set(flyingVec);
+
+	std::cout << "drop = " << drop << "  speed = " << curSpeed << "  iterations:" << iterations << std::endl;
+	return time;
+}
+
+
+
+int main()
+{
+	calculateShootDir(0.393, 295.0f, 7);
+    return 0;
+}
+

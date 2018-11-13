@@ -1,0 +1,27 @@
+#include "tilemap_generator.cnf"
+#include "tilemaps/tilemaps.cnf"
+
+
+
+
+[camera_defines]
+standard_x_camera_factor = 30
+
+[online_params]
+online_radius = 3
+
+[mouse_params]
+double_click_delay = 0.3
+
+[keyboard_params]
+delayed_holding_delay = 400
+
+
+[kamen]
+texture = "kamen"
+size = 0.5
+static_accel = 5.0
+min_speed = 1.0
+
+[font_anonymous]
+path = "Anonymous.ttf"

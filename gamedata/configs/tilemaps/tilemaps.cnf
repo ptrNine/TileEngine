@@ -1,0 +1,7 @@
+[tilemap_define]
+terrain_elements
+
+
+[terrain_elements]
+size = 64
+path = tilemaps/terrain_elements.png

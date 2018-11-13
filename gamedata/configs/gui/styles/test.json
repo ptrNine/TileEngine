@@ -1,0 +1,24 @@
+{
+    "panel" : {
+        "position" : [ 20, 20],
+        "size"     : [ 400, 400],
+        "alignment" : "resizable",
+        "texture" : [ 150, 150, 150, 255 ],
+        "outline" : {
+            "thickness" : 2,
+            "color" : [230, 230, 230, 255]
+        }         
+    },
+    "label" : {
+
+    },
+    "edit" : {
+
+    },
+    "button" : {
+
+    },
+    "select" : {
+
+    }
+}
