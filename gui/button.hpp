@@ -28,9 +28,9 @@ public:
     void setPressFilling	(const sf::Color& color);
     void setPressTexture	(const sf::Texture* texture);
     void setPressBorder		(const sf::Color& color, float t);
-    void setPressBorderSize	(float t);
+    void setPressBorderSize (float t);
     void setPressBorderColor(const sf::Color& color);
-    void setAction			(BFunctor const& action);
+    void setAction		    (BFunctor const& action);
 
 
     void setPos		(const sf::Vector2f& pos) override;
