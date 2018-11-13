@@ -18,16 +18,16 @@ namespace sf { class Texture; }
 ///////////////////////////////////////////////////////////////////////////////
 class CTileMap {
 protected:
-	U32				_tileSize;								// tile size in pixels
-	sf::Texture*	_texture;
+    U32				_tileSize;								// tile size in pixels
+    sf::Texture*	_texture;
 
 public:
-	CTileMap(sf::Texture* texture, U32 tileSize);
+    CTileMap(sf::Texture* texture, U32 tileSize);
 
-	// Getting tile coordinates in shape. RectangleShape texture sets to _texture
-	// shape			- sfml rectangle shape that should be writed
-	// tile_position	- tile position (double array number) in texture
-	void getTile(sf::RectangleShape& shape, const sf::Vector2u& tile_position) const;  
+    // Getting tile coordinates in shape. RectangleShape texture sets to _texture
+    // shape			- sfml rectangle shape that should be writed
+    // tile_position	- tile position (double array number) in texture
+    void getTile(sf::RectangleShape& shape, const sf::Vector2u& tile_position) const;
 };
 
 
@@ -49,11 +49,11 @@ public:
 
 
 struct STile {
-	U32		tilemap_uid;
-	U8		tilemap_position_x;
-	U8		tilemap_position_y;
-	U8		material_uid;
-	U8		rotation;			// 0 - +0 1 - +90 2 - + 180 3 - +270 4 - x-mirroring 5 - y-mirroring 6 - mirroring
+    U32		tilemap_uid;
+    U8		tilemap_position_x;
+    U8		tilemap_position_y;
+    U8		material_uid;
+    U8		rotation;			// 0 - +0 1 - +90 2 - + 180 3 - +270 4 - x-mirroring 5 - y-mirroring 6 - mirroring
 };
 
 
@@ -67,30 +67,30 @@ struct STile {
 ///////////////////////////////////////////////////////////////////////////////
 class CTileManager {
 private:
-	std::map<U32, CTileMap> _pathMap;
+    std::map<U32, CTileMap> _pathMap;
 
 public:
-	//	write in rectangle shape real tile texture
-	//
-	//	real_tile	- sfml rectangle shape that should be writed
-	//	tile		- engine tile
-	void getRealTile(sf::RectangleShape& real_tile, const STile& tile) const;		
+    //	write in rectangle shape real tile texture
+    //
+    //	real_tile	- sfml rectangle shape that should be writed
+    //	tile		- engine tile
+    void getRealTile(sf::RectangleShape& real_tile, const STile& tile) const;
 
 
 // singleton realization
 private:
-	CTileManager();
-	~CTileManager() = default;
+    CTileManager();
+    ~CTileManager() = default;
 
 public:
-	CTileManager(const CTileManager&) = delete;
-	CTileManager& operator=(const CTileManager&) = delete;
+    CTileManager(const CTileManager&) = delete;
+    CTileManager& operator=(const CTileManager&) = delete;
 
 public:
-	static CTileManager& inst() {
-		static CTileManager instance;
-		return instance;
-	}
+    static CTileManager& inst() {
+        static CTileManager instance;
+        return instance;
+    }
 
 };
 

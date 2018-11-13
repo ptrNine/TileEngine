@@ -13,22 +13,22 @@ class CCollisionRectangle;
 /////////////////////////////////////////////////////////////////////////////////////////
 class CCBoxObject : public CRectangleObject {
 private:
-	typedef CRectangleObject inherited;
+    typedef CRectangleObject inherited;
 
 public:
-	friend class CEngineKernel;
+    friend class CEngineKernel;
 
-	CCBoxObject				();
-	~CCBoxObject			() override;
+    CCBoxObject				();
+    ~CCBoxObject			() override;
 
-	void update		(double timestep) override {};
-	bool draw		(sf::RenderWindow*	window, const vector2d& viewpoint, double pixelToMeters) const override { return false; };
+    void update		(double timestep) override {};
+    bool draw		(sf::RenderWindow*	window, const vector2d& viewpoint, double pixelToMeters) const override { return false; };
 
 protected:
-	CCollisionRectangle * _cRect;
+    CCollisionRectangle * _cRect;
 
 public:
-	virtual CCollisionRectangle* getCollisionRect() { return _cRect; }
+    virtual CCollisionRectangle* getCollisionRect() { return _cRect; }
 };
 
 

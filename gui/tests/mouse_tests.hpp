@@ -1,15 +1,15 @@
 #ifndef _MOUSE_TESTS_HPP_
 #define _MOUSE_TESTS_HPP_
 namespace sf {
-	class Window;
+    class Window;
 }
 
 class CMouseClickTest {
 private:
-	sf::Window* _wnd;
+    sf::Window* _wnd;
 public:
-	explicit CMouseClickTest(sf::Window* wnd);
-	void run();
+    explicit CMouseClickTest(sf::Window* wnd);
+    void run();
 };
 
 

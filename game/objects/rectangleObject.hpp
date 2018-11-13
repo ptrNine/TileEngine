@@ -11,18 +11,18 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 class CRectangleObject : public CPhysicObject {
 private:
-	typedef CPhysicObject inherited;
+    typedef CPhysicObject inherited;
 
 public:
-	friend class CEngineKernel;
-	CRectangleObject			();
-	~CRectangleObject	() override = default;
+    friend class CEngineKernel;
+    CRectangleObject			();
+    ~CRectangleObject	() override = default;
 
 protected:
-	vector2d			_size;		// размер объекта
+    vector2d			_size;		// размер объекта
 
 public:
-	virtual void setSize				(const vector2d& size);
+    virtual void setSize				(const vector2d& size);
 
 };
 

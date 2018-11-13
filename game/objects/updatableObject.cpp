@@ -2,5 +2,5 @@
 
 
 CUpdatableObject::CUpdatableObject() {
-	OBJECT_TYPE = EUpdatableObject;
+    OBJECT_TYPE = EUpdatableObject;
 }

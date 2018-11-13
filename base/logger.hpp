@@ -3,29 +3,29 @@
 #include <fstream>
 
 namespace ne_laz {
-	extern bool isLoggerCreated;
+    extern bool isLoggerCreated;
 }
 
 class Logger {
 public:
-	FILE*			file;
-	std::string 	_path;
+    FILE*			file;
+    std::string 	_path;
 
 private:
-	Logger();
-	~Logger();
+    Logger();
+    ~Logger();
 public:
-	Logger(const Logger&) = delete;
-	Logger& operator= (const Logger&) = delete;
+    Logger(const Logger&) = delete;
+    Logger& operator= (const Logger&) = delete;
 
 public:
-	static Logger& _instance() { static Logger instance; return instance; }
+    static Logger& _instance() { static Logger instance; return instance; }
 
 public:
-	void print(const char* format, ...) const;
-	void close();
-	void open();
-	void reopen();
+    void print(const char* format, ...) const;
+    void close();
+    void open();
+    void reopen();
 };
 
 #define Log(format, ...)	if(ne_laz::isLoggerCreated) Logger::_instance().print(format, ##__VA_ARGS__)
@@ -37,9 +37,9 @@ public:
 
 
 #ifdef DEBUG
-	#define DLog(format, ...) Log(format, __VA_ARGS__)
+    #define DLog(format, ...) Log(format, __VA_ARGS__)
 #else
-	#define DLog(format, ...) ((void)0)
+    #define DLog(format, ...) ((void)0)
 #endif // NDEBUG
 
 

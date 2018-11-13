@@ -23,39 +23,39 @@ class AssertTools {
 
 public:
 
-	static const unsigned ASSERT_BUFF_SIZE = 1024 * 4;
+    static const unsigned ASSERT_BUFF_SIZE = 1024 * 4;
 
-	static void varargAssert(bool expr, const int line, const char* file, const char* func, const char* format, ...) {
+    static void varargAssert(bool expr, const int line, const char* file, const char* func, const char* format, ...) {
 
-		if (!expr) {
-			va_list args;
+        if (!expr) {
+            va_list args;
 
-			va_start(args, format);
-			char buffer[ASSERT_BUFF_SIZE];
-			vsprintf(buffer, format, args);
-			va_end(args);
+            va_start(args, format);
+            char buffer[ASSERT_BUFF_SIZE];
+            vsprintf(buffer, format, args);
+            va_end(args);
 
-			Log("\n\nFATAL ERROR:\n file:     %s\n function: %s\n line:     %d\n what:     %s\n ", file, func, line, buffer);
-			abort();
-		}
-	}
+            Log("\n\nFATAL ERROR:\n file:     %s\n function: %s\n line:     %d\n what:     %s\n ", file, func, line, buffer);
+            abort();
+        }
+    }
 
 
-	inline static void _msg_assert(bool expr) {
+    inline static void _msg_assert(bool expr) {
 
-		abort(); 
-	
-	}
+        abort();
+
+    }
 
 
     inline static void _msg_assert(bool expr, const char* msg, const int line, const char* file, const char* func) {
 
-		if (!expr) {
-			printf("FATAL ERROR: %s\n file: %s\n line: %d\n", msg, file, line);
-			Log("\n\nFATAL ERROR:\n file:     %s\n function: %s\n line:     %d\n what:     %s\n ", file, func, line, msg);
-			abort();
-		}
-	}
+        if (!expr) {
+            printf("FATAL ERROR: %s\n file: %s\n line: %d\n", msg, file, line);
+            Log("\n\nFATAL ERROR:\n file:     %s\n function: %s\n line:     %d\n what:     %s\n ", file, func, line, msg);
+            abort();
+        }
+    }
 
 };
 

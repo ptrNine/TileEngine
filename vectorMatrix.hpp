@@ -7,16 +7,16 @@
 
 namespace zog {
 
-	template <typename T>
-	class matrix {
+    template <typename T>
+    class matrix {
 
-	protected:
-		std::vector<T> _vector;
+    protected:
+        std::vector<T> _vector;
 
-	public:
-		matrix() = default;
-		void reserve(size_t newCapacity) { _vector.reserve(newCapacity * newCapacity); _vector[0][0] = 0; }
-	};
+    public:
+        matrix() = default;
+        void reserve(size_t newCapacity) { _vector.reserve(newCapacity * newCapacity); _vector[0][0] = 0; }
+    };
 
 }
 

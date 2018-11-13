@@ -14,40 +14,40 @@
 
 class CBulletManager {
 protected:
-	std::list<CBullet*> _bullets;
+    std::list<CBullet*> _bullets;
 
 public:
-	CBullet*	add		(const vector2d& pos, const vector2d& toPoint, double speed, CUpdatableObject* owner);
-	void		update	(double timestep);
-	U32			draw	(sf::RenderWindow*	window, const vector2d& viewpoint, double pixelToMeters) const;
+    CBullet*	add		(const vector2d& pos, const vector2d& toPoint, double speed, CUpdatableObject* owner);
+    void		update	(double timestep);
+    U32			draw	(sf::RenderWindow*	window, const vector2d& viewpoint, double pixelToMeters) const;
 
-	CBullet*	getBack	() { return _bullets.back(); }
-	size_t		getCount() { return _bullets.size(); }
+    CBullet*	getBack	() { return _bullets.back(); }
+    size_t		getCount() { return _bullets.size(); }
 
-	sf::RectangleShape	_trail;
+    sf::RectangleShape	_trail;
 
 
-	
+
 // singleton realization
 private:
-	CBulletManager				();
-	~CBulletManager				() = default;
+    CBulletManager				();
+    ~CBulletManager				() = default;
 
 public:
-	CBulletManager				(const CBulletManager&) = delete;
-	CBulletManager& operator=	(const CBulletManager&) = delete;
+    CBulletManager				(const CBulletManager&) = delete;
+    CBulletManager& operator=	(const CBulletManager&) = delete;
 
 public:
-	static CBulletManager& inst() {
-		static CBulletManager instance;
-		return instance;
-	}
+    static CBulletManager& inst() {
+        static CBulletManager instance;
+        return instance;
+    }
 };
 
 namespace zog {
-	inline CBulletManager& bullet_manager() {
-		return CBulletManager::inst();
-	}
+    inline CBulletManager& bullet_manager() {
+        return CBulletManager::inst();
+    }
 }
 
 #endif // !_BULLET_MANAGER_HPP_

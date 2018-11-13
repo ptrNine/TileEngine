@@ -15,21 +15,21 @@
 ////////////////////////////////////////////////////////////////////
 class CChunkGenerator {
 public:
-	void generateChunk(CChunk* chunk, const bfs::path& map, const sf::Vector2i& chunkNumber) const;
+    void generateChunk(CChunk* chunk, const bfs::path& map, const sf::Vector2i& chunkNumber) const;
 
 private:
-	CChunkGenerator()  = default;
-	~CChunkGenerator() = default;
+    CChunkGenerator()  = default;
+    ~CChunkGenerator() = default;
 
 public:
-	CChunkGenerator(const CChunkGenerator&) = delete;
-	CChunkGenerator& operator=(const CChunkGenerator&) = delete;
+    CChunkGenerator(const CChunkGenerator&) = delete;
+    CChunkGenerator& operator=(const CChunkGenerator&) = delete;
 
 public:
-	static CChunkGenerator& inst() {
-		static CChunkGenerator instance;
-		return instance;
-	}
+    static CChunkGenerator& inst() {
+        static CChunkGenerator instance;
+        return instance;
+    }
 };
 
 

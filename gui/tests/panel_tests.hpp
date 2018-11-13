@@ -5,7 +5,7 @@
 
 class CPanelAlignment {
 public:
-	CPanelAlignment() = default;
+    CPanelAlignment() = default;
 
 };
 

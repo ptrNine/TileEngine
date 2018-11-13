@@ -4,15 +4,15 @@
 #include "../keyboard.hpp"
 
 namespace sf {
-	class Window;
+    class Window;
 }
 
 class CKeyboardClickTest {
 private:
-	sf::Window* _wnd;
+    sf::Window* _wnd;
 public:
-	explicit CKeyboardClickTest(sf::Window* wnd);
-	void run();
+    explicit CKeyboardClickTest(sf::Window* wnd);
+    void run();
 };
 
 #endif // !_KEYBOARD_TESTS_HPP_

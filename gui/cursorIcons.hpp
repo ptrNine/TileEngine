@@ -7,34 +7,34 @@
 
 class CCursorIcons {
 private:
-	static const U32	_iconsCount = 3;	// 0 - regular, 1 - text
-	sf::Texture*		_icons[_iconsCount];
-	sf::RectangleShape	_sprite;
-	sf::RenderStates	_renderStates;
+    static const U32	_iconsCount = 3;	// 0 - regular, 1 - text
+    sf::Texture*		_icons[_iconsCount];
+    sf::RectangleShape	_sprite;
+    sf::RenderStates	_renderStates;
 
-	CCursorIcons();
-	~CCursorIcons();
+    CCursorIcons();
+    ~CCursorIcons();
 public:
-	CCursorIcons(const CCursorIcons&) = delete;
-	CCursorIcons& operator= (const CCursorIcons&) = delete;
+    CCursorIcons(const CCursorIcons&) = delete;
+    CCursorIcons& operator= (const CCursorIcons&) = delete;
 
 public:
-	enum class Type {
-		regular,
-		text,
-		button
-	};
+    enum class Type {
+        regular,
+        text,
+        button
+    };
 
 
-	void drawCursor(sf::RenderWindow& wnd);
-	void setType(Type type);
-	void resize(const sf::Vector2f& factors);
+    void drawCursor(sf::RenderWindow& wnd);
+    void setType(Type type);
+    void resize(const sf::Vector2f& factors);
 
 
-	static CCursorIcons& instance() {
-		static CCursorIcons inst;
-		return inst;
-	}
+    static CCursorIcons& instance() {
+        static CCursorIcons inst;
+        return inst;
+    }
 
 };
 

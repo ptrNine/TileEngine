@@ -13,29 +13,29 @@
 
 class CContextMenu : public CButtonArray {
 public:
-	friend class CLabel;		// для апдейта
+    friend class CLabel;		// для апдейта
 
 private:
-	typedef CButtonArray inherited;
+    typedef CButtonArray inherited;
 
 public:
-	CContextMenu();
-	explicit CContextMenu(const sf::FloatRect& rect, U32 align = Aligment::none);
+    CContextMenu();
+    explicit CContextMenu(const sf::FloatRect& rect, U32 align = Aligment::none);
 
-	void show();	// показать контекстное меню
-	void close();	// скрыть контекстное меню
-	bool isShown(); 
+    void show();	// показать контекстное меню
+    void close();	// скрыть контекстное меню
+    bool isShown();
 
 
 
 protected:
-	bool _isShown;	// показывается ли контекстное меню
-	
+    bool _isShown;	// показывается ли контекстное меню
 
-	// virtual methods
+
+    // virtual methods
 protected:
-	void update(CWindow& wnd) override;
-	void draw(CWindow& wnd) override;
+    void update(CWindow& wnd) override;
+    void draw(CWindow& wnd) override;
 };
 
 

@@ -7,23 +7,23 @@
 
 class CEngineState {
 public:
-	double	timestep;
+    double	timestep;
 
 
 //	singleton realization
 private:
-	CEngineState(): timestep(0){};
-	~CEngineState() = default;
+    CEngineState(): timestep(0){};
+    ~CEngineState() = default;
 
 public:
-	CEngineState(const CEngineState&) = delete;
-	CEngineState& operator=(const CEngineState&) = delete;
+    CEngineState(const CEngineState&) = delete;
+    CEngineState& operator=(const CEngineState&) = delete;
 
 public:
-	static CEngineState& inst() {
-		static CEngineState instance;
-		return instance;
-	}
+    static CEngineState& inst() {
+        static CEngineState instance;
+        return instance;
+    }
 };
 
 
@@ -33,46 +33,46 @@ class CChunkArea;
 
 class CEngineKernel {
 public:
-	explicit CEngineKernel(sf::RenderWindow* window);
-	~CEngineKernel();
+    explicit CEngineKernel(sf::RenderWindow* window);
+    ~CEngineKernel();
 
-	void load_map(const shared_str& map_name);
-	void update(const vector2d& viewpoint, double timestep) const;
-	void draw(const vector2d& viewpoint) const;
+    void load_map(const shared_str& map_name);
+    void update(const vector2d& viewpoint, double timestep) const;
+    void draw(const vector2d& viewpoint) const;
 
-	void addObject		(CPhysicObject* object);		// adding object to map
-	void destroyObject	(CPhysicObject* object);		// deleting object from map
+    void addObject		(CPhysicObject* object);		// adding object to map
+    void destroyObject	(CPhysicObject* object);		// deleting object from map
 
 
-	double getPixelsToMeters() const{ return _placeToTile; }
+    double getPixelsToMeters() const{ return _placeToTile; }
 
-	U32 getCameraXFactor	()				{ return _cameraXFactor; }
-	void setCameraXFactor	(U32 factor);
+    U32 getCameraXFactor	()				{ return _cameraXFactor; }
+    void setCameraXFactor	(U32 factor);
 
-	void setDrawCollisions	(bool drawCollisions) { _drawCollisions = drawCollisions; }
+    void setDrawCollisions	(bool drawCollisions) { _drawCollisions = drawCollisions; }
 
 
 protected:
 
-	mutable sf::RenderWindow*		_window;
-	CChunkArea*					_onlineChunks;
-	U32								_cameraXFactor;  // CNF: how much chunk tiles can be placed in screen width
-	mutable double					_placeToTile;	// screen_width/_cameraXFactor: place in pixels to one tile (1 tile = 1 meter) 
+    mutable sf::RenderWindow*		_window;
+    CChunkArea*					_onlineChunks;
+    U32								_cameraXFactor;  // CNF: how much chunk tiles can be placed in screen width
+    mutable double					_placeToTile;	// screen_width/_cameraXFactor: place in pixels to one tile (1 tile = 1 meter)
 
-	std::deque<CPhysicObject*>		_objects;		// all game objects
+    std::deque<CPhysicObject*>		_objects;		// all game objects
 
 
-	bool							_drawCollisions;
+    bool							_drawCollisions;
 
 
 public:
 
-	// info
+    // info
 protected:
-	mutable U32						_renderedObjects;
+    mutable U32						_renderedObjects;
 
 public:
-	U32								infoObjectsInView() { return _renderedObjects; }
+    U32								infoObjectsInView() { return _renderedObjects; }
 };
 
 #endif //_GAMEBASE_HPP_
