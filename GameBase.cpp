@@ -41,7 +41,6 @@ void CEngineKernel::update(const vector2d& viewpoint, double timestep) const {
     CCollisionManager::inst().update();
 }
 
-// да братан это БЛЯДСКИЙ рендер
 void CEngineKernel::draw(const vector2d& viewpoint) const {
     ///////////////////// Рендер мапы
     // Находим половину экрана в метрах
